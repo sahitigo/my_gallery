@@ -1,0 +1,41 @@
+$bg-color:#F4D03F;
+$font-color:#F22613;
+html,body{
+    background-color:$bg-color;
+    color:$font-color;
+}
+#image-gallery {
+    .item{
+            height: 200px;
+            background-color:red;
+            background-repeat:no-repeat;
+            background-size:cover;
+            background-position:50% 0%;
+            overflow:hidden;
+            
+            transition:all 0.3s ease-in;
+            .slide{
+              background-color:black;
+              color:$bg-color;
+              margin:0 -15px;
+              padding:20px 0;
+              text-align:center;
+              transform:translateY(-100%);
+              font-family: 'Architects Daughter', cursive;
+              
+              
+            }
+            
+            &:hover{
+                .slide{
+                  transform:translateY(0%);
+                }
+              }
+     @for $i from 1 through 12{
+        &.item-#{$i}{
+                background-image:url("../images/#{$i}.jpg");
+        }
+    
+      }   
+    }
+  }
